@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:peronal_money_mangment/db/category/category_db.dart';
+import 'package:peronal_money_mangment/model/categery/categery_model.dart';
 import 'package:peronal_money_mangment/screen/catagery/screen_catagery.dart';
 import 'package:peronal_money_mangment/screen/transactions/screen_transactions.dart';
 
+import '../catagery/custom_popup_button.dart';
 import 'widgets/bottom_navigation.dart';
 
 class ScreenHome extends StatelessWidget {
@@ -19,6 +22,13 @@ class ScreenHome extends StatelessWidget {
             print('add trnsation data');
           } else {
             print('add catagery data');
+            showCategoryAddPopup(context);
+            // final _categryValues = CategeryModel(
+            //     id: DateTime.now().millisecondsSinceEpoch.toString(),
+            //     categeryName: 'travel',
+            //     type: CategoryType.expense);
+            // print('----------------------------------0');
+            // CategoryDB().instertCategory(_categryValues);
           }
         },
         child: Icon(Icons.add),

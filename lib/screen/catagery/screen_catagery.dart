@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:peronal_money_mangment/db/category/category_db.dart';
 import 'package:peronal_money_mangment/screen/catagery/expense/screen_expense.dart';
 import 'package:peronal_money_mangment/screen/catagery/income/screen_income.dart';
 
@@ -16,7 +17,10 @@ class _ScreenCatageryState extends State<ScreenCatagery>
   @override
   void initState() {
     _tabController = TabController(length: 2, vsync: this);
-    // TODO: implement initState
+    CategoryDB().getCategories().then((value) {
+      print('category get');
+      print(value.toString());
+    });
     super.initState();
   }
 

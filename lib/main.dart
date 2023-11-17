@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:peronal_money_mangment/model/categery/categery_model.dart';
 
 import 'screen/home/screen_home.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  if (!Hive.isAdapterRegistered(CategoryTypeAdapter().typeId)) {
+    Hive.registerAdapter(CategoryTypeAdapter());
+  }
+  if (!Hive.isAdapterRegistered(CategeryModelAdapter().typeId)) {
+    Hive.registerAdapter(CategeryModelAdapter());
+  }
   runApp(const MyApp());
 }
 
