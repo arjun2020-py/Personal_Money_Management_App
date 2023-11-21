@@ -17,10 +17,7 @@ class _ScreenCatageryState extends State<ScreenCatagery>
   @override
   void initState() {
     _tabController = TabController(length: 2, vsync: this);
-    CategoryDB().getCategories().then((value) {
-      print('category get');
-      print(value.toString());
-    });
+    CategoryDB().refreshUI();
     super.initState();
   }
 

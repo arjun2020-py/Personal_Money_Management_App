@@ -21,7 +21,7 @@ class MoneyMangmentButtonNaviButton extends StatelessWidget {
             BottomNavigationBarItem(
                 icon: Icon(Icons.home), label: 'Transactions'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.category_sharp), label: 'Catagery')
+                icon: Icon(Icons.category_sharp), label: 'Category')
           ],
         );
       },

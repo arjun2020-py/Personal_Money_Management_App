@@ -1,6 +1,6 @@
+
 import 'package:flutter/material.dart';
-import 'package:peronal_money_mangment/db/category/category_db.dart';
-import 'package:peronal_money_mangment/model/categery/categery_model.dart';
+import 'package:peronal_money_mangment/screen/add_transaction/add_transation.dart';
 import 'package:peronal_money_mangment/screen/catagery/screen_catagery.dart';
 import 'package:peronal_money_mangment/screen/transactions/screen_transactions.dart';
 
@@ -20,6 +20,7 @@ class ScreenHome extends StatelessWidget {
         onPressed: () {
           if (selectedIndexNotfier.value == 0) {
             print('add trnsation data');
+            Navigator.of(context).pushNamed(AddTransaction.router);
           } else {
             print('add catagery data');
             showCategoryAddPopup(context);
