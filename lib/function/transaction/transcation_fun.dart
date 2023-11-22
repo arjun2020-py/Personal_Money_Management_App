@@ -5,12 +5,12 @@ import '../../model/categery/categery_model.dart';
 final TextEditingController purposeController = TextEditingController(),
     amountController = TextEditingController();
 final formKey = GlobalKey<FormState>();
- DateTime? selectDate;
-CategoryType? selectCategoryType;
+DateTime? selectDate;
+ValueNotifier<CategoryType> selectCategoryTypeNotfier = ValueNotifier(CategoryType.income);
 CategeryModel? selectedCategoryModel;
 
 // onSelectDate(DateTime selectedDate) {
-  
+
 //   selectDate = selectedDate;
 //   print('choice date${selectDate.value}');
 // }

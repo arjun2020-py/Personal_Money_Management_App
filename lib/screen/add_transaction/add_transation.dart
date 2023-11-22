@@ -15,7 +15,9 @@ class AddTransaction extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.blue,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
             icon: Icon(
               Icons.arrow_back_ios_new,
               color: Colors.white,
@@ -25,10 +27,7 @@ class AddTransaction extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: SafeArea(
-          child: CustomColoumWidget(
-      
-      )),
+      body: SafeArea(child: CustomColoumWidget()),
     );
   }
 }
