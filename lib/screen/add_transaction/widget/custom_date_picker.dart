@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../../function/transaction/transcation_fun.dart';
 
@@ -28,7 +29,7 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
           });
         }
       },
-      label: Text(selectDate == null ? 'Select Date' : selectDate.toString()),
+      label: Text(selectDate == null ? 'Select Date' : DateFormat('yyyy-MM-dd').format(selectDate!)),
     );
   }
 }

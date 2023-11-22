@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../model/categery/categery_model.dart';
 
@@ -6,8 +7,16 @@ final TextEditingController purposeController = TextEditingController(),
     amountController = TextEditingController();
 final formKey = GlobalKey<FormState>();
 DateTime? selectDate;
-ValueNotifier<CategoryType> selectCategoryTypeNotfier = ValueNotifier(CategoryType.income);
+ValueNotifier<CategoryType> selectCategoryTypeNotfier =
+    ValueNotifier(CategoryType.income);
 CategeryModel? selectedCategoryModel;
+final RxList<CategeryModel> categoryList = <CategeryModel>[].obs;
+
+ValueNotifier<String> categoryID = ValueNotifier('');
+
+onSelectId(String  selectedValue) {
+  categoryID.value = selectedValue;
+}
 
 // onSelectDate(DateTime selectedDate) {
 
