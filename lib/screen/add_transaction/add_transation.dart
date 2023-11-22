@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import 'add_transation_controller.dart';
 import 'widget/custom_column.dart';
 
 class AddTransaction extends StatelessWidget {
-  const AddTransaction({super.key});
+  AddTransaction({super.key});
   static const router = 'add_transcation';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +25,10 @@ class AddTransaction extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: SafeArea(child: CustomColoumWidget()),
+      body: SafeArea(
+          child: CustomColoumWidget(
+      
+      )),
     );
   }
 }
