@@ -11,15 +11,14 @@ ValueNotifier<CategoryType> selectCategoryTypeNotfier =
     ValueNotifier(CategoryType.income);
 CategeryModel? selectedCategoryModel;
 final RxList<CategeryModel> categoryList = <CategeryModel>[].obs;
+String? categoryID; //for dropdwon list.
 
-ValueNotifier<String> categoryID = ValueNotifier('');
-
-onSelectId(String  selectedValue) {
-  categoryID.value = selectedValue;
-}
+// onSelectId(String selectedValue) {
+//   categoryID.value = selectedValue;
+// }
 
 // onSelectDate(DateTime selectedDate) {
-
+ 
 //   selectDate = selectedDate;
 //   print('choice date${selectDate.value}');
 // }

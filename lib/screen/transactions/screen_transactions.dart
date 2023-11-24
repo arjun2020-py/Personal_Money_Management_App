@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:peronal_money_mangment/db/category/category_db.dart';
 
 class ScreenTrnasation extends StatelessWidget {
   const ScreenTrnasation({super.key});
@@ -20,7 +21,7 @@ class ScreenTrnasation extends StatelessWidget {
                 radius: 30,
                 child: Text(
                   '12\n DEC',
-                  textAlign: TextAlign.center ,
+                  textAlign: TextAlign.center,
                 )),
             title: Text('100000'),
             subtitle: Text('Travel'),

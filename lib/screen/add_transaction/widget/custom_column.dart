@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:peronal_money_mangment/model/categery/categery_model.dart';
 
 import '../../../function/transaction/transcation_fun.dart';
-import '../add_transation_controller.dart';
 import 'custom_date_picker.dart';
 import 'custom_dropdown_widget.dart';
 import 'custom_elev_button.dart';

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import 'add_transation_controller.dart';
 import 'widget/custom_column.dart';
 
 class AddTransaction extends StatelessWidget {

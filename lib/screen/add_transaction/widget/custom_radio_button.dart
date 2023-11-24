@@ -23,7 +23,7 @@ class CustomRadioButton extends StatelessWidget {
                 return;
               }
               selectCategoryTypeNotfier.value = value;
-            
+              categoryID = null;
               selectCategoryTypeNotfier.notifyListeners();
             },
           );
