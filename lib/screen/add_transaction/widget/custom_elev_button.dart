@@ -15,15 +15,16 @@ class CustomElevButton extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width * 0.6,
       child: ElevatedButton(
         onPressed: () {
-          onSubmitTranscation(context);
           //function
+          addTranscation(context);
+          onSubmitTranscation(context);
         },
         child: Text('Add'),
       ),
     );
   }
 
-  Future<void> addTranscation() async {
+  Future<void> addTranscation(BuildContext context) async {
     final _puropseText = purposeController.text;
     final _amountText = amountController.text;
 
@@ -51,6 +52,25 @@ class CustomElevButton extends StatelessWidget {
         type: selectCategoryTypeNotfier.value,
         model: selectedCategoryModel!);
 
-    TransactionDB.instance.addTransaction(_model);
+    await TransactionDB.instance.addTransaction(_model);
+
+    if (formKey.currentState!.validate()) {
+      purposeController.clear();
+      amountController.clear();
+      Navigator.of(context).pop();
+    }
+    TransactionDB.instance.refresh();
+  }
+
+  onPurposeValidation(String value) {
+    if (value.isEmpty) {
+      return 'enter valid purpose';
+    }
+  }
+
+  onAmountValidation(String value) {
+    if (value.isEmpty) {
+      return 'enter vaild amount';
+    }
   }
 }

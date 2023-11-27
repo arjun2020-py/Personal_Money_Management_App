@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 import '../../model/categery/categery_model.dart';
 
@@ -18,7 +19,7 @@ String? categoryID; //for dropdwon list.
 // }
 
 // onSelectDate(DateTime selectedDate) {
- 
+
 //   selectDate = selectedDate;
 //   print('choice date${selectDate.value}');
 // }
@@ -41,4 +42,10 @@ onAmountValidation(String value) {
   if (value.isEmpty) {
     return 'enter vaild amount';
   }
+}
+
+String parseDate(DateTime date) {
+  final _date = DateFormat.MMMd().format(date);
+  final _splitDate = _date.split(' ');
+  return '${_splitDate.last}\n ${_splitDate.first}';
 }

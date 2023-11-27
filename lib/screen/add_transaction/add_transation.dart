@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:peronal_money_mangment/db/transation/transcation_db.dart';
 
 import 'widget/custom_column.dart';
 
@@ -7,6 +8,7 @@ class AddTransaction extends StatelessWidget {
   static const router = 'add_transcation';
   @override
   Widget build(BuildContext context) {
+    TransactionDB.instance.refresh();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

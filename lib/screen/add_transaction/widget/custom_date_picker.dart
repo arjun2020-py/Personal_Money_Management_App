@@ -29,7 +29,8 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
           });
         }
       },
-      label: Text(selectDate == null ? 'Select Date' : DateFormat('yyyy-MM-dd').format(selectDate!)),
+      label: Text(selectDate == null ? 'Select Date' : DateFormat.yMMMMd().format(selectDate!)),
     );
   }
 }
+//
