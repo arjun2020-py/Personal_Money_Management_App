@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:peronal_money_mangment/db/category/category_db.dart';
 import 'package:peronal_money_mangment/db/transation/transcation_db.dart';
 import 'package:peronal_money_mangment/function/transaction/transcation_fun.dart';
@@ -26,20 +27,36 @@ class ScreenTrnasation extends StatelessWidget {
             final _values = newList[index];
             print('-----------------------------------');
             print('transcation length ${newList.length}');
-            return Card(
-              child: ListTile(
-                leading: CircleAvatar(
-                    backgroundColor: _values.type == CategoryType.income
-                        ? Colors.green
-                        : Colors.red,
-                    radius: 30,
-                    child: Text(
-                      //  '12\n DEC',
-                      parseDate(_values.date),
-                      textAlign: TextAlign.center,
-                    )),
-                title: Text('RS ${_values.amount.toString()}'),
-                subtitle: Text(_values.model.categeryName),
+            return Slidable(
+              key: Key(_values.id!),
+              endActionPane: ActionPane(
+                motion: ScrollMotion(),
+                children: [
+                  SlidableAction(
+                    onPressed: (context) {
+                      TransactionDB.instance.deleteTranscation(_values.id!);
+                    },
+                    icon: Icons.delete,
+                    backgroundColor: Colors.red,
+                    label: 'Delete',
+                  )
+                ],
+              ),
+              child: Card(
+                child: ListTile(
+                  leading: CircleAvatar(
+                      backgroundColor: _values.type == CategoryType.income
+                          ? Colors.green
+                          : Colors.red,
+                      radius: 30,
+                      child: Text(
+                        //  '12\n DEC',
+                        parseDate(_values.date),
+                        textAlign: TextAlign.center,
+                      )),
+                  title: Text('RS ${_values.amount.toString()}'),
+                  subtitle: Text(_values.model.categeryName),
+                ),
               ),
             );
           },

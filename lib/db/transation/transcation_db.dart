@@ -8,6 +8,7 @@ const TRANSCATION_DB_NAME = 'transcation_db';
 abstract class TranscationDBFunctions {
   Future<void> addTransaction(TranscationModel obj);
   Future<List<TranscationModel>> getAllTranscation();
+  Future<void> deleteTranscation(String id);
 }
 
 class TransactionDB implements TranscationDBFunctions {
@@ -18,12 +19,14 @@ class TransactionDB implements TranscationDBFunctions {
   factory TransactionDB() {
     return instance;
   }
-  
+
   ValueNotifier<List<TranscationModel>> transcationListNotfier =
       ValueNotifier([]);
   Future<void> refresh() async {
     final _list = await getAllTranscation();
-    _list.sort((first, second) => second.date.compareTo(first.date) ,);
+    _list.sort(
+      (first, second) => second.date.compareTo(first.date),
+    );
     transcationListNotfier.value.clear();
     transcationListNotfier.value.addAll(_list);
     transcationListNotfier.notifyListeners();
@@ -39,5 +42,12 @@ class TransactionDB implements TranscationDBFunctions {
   Future<List<TranscationModel>> getAllTranscation() async {
     final _db = await Hive.openBox<TranscationModel>(TRANSCATION_DB_NAME);
     return _db.values.toList();
+  }
+
+  @override
+  Future<void> deleteTranscation(String id) async {
+    final _db = await Hive.openBox<TranscationModel>(TRANSCATION_DB_NAME);
+    _db.delete(id);
+    refresh();
   }
 }
