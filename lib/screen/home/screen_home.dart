@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:peronal_money_mangment/screen/add_transaction/add_transation.dart';
 import 'package:peronal_money_mangment/screen/catagery/screen_catagery.dart';
@@ -14,6 +13,7 @@ class ScreenHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff21acad),
       bottomNavigationBar: MoneyMangmentButtonNaviButton(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
@@ -35,6 +35,7 @@ class ScreenHome extends StatelessWidget {
         child: Icon(Icons.add),
       ),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.blue,
         title: Text(
           'MONEY MANAGER',

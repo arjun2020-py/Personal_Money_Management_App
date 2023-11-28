@@ -19,6 +19,8 @@ class ScreenTrnasation extends StatelessWidget {
           padding: EdgeInsets.all(10),
           itemCount: newList.length,
           separatorBuilder: (BuildContext context, int index) {
+
+            
             return SizedBox(
               height: 10,
             );

@@ -5,6 +5,7 @@ import 'package:peronal_money_mangment/model/categery/categery_model.dart';
 import 'package:peronal_money_mangment/screen/add_transaction/add_transation.dart';
 
 import 'screen/home/screen_home.dart';
+import 'screen/splash/splash_screen.dart';
 import 'screen/transactions/model/transcation_model.dart';
 
 Future<void> main() async {
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ScreenHome(),
+      home: SplashScreen(),
       routes: {AddTransaction.router: (context) => AddTransaction()},
     );
   }

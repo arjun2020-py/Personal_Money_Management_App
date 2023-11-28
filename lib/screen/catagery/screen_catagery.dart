@@ -27,7 +27,7 @@ class _ScreenCatageryState extends State<ScreenCatagery>
       children: [
         TabBar(
             labelColor: Colors.black,
-            unselectedLabelColor: Colors.grey,
+            unselectedLabelColor: Colors.white,
             controller: _tabController,
             tabs: [
               Tab(
