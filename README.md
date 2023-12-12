@@ -1,16 +1,4 @@
 # peronal_money_mangment
+![WhatsApp Image 2023-12-12 at 3 10 47 PM](https://github.com/arjun2020-py/Personal_Money_Management_App/assets/69357545/bf0d8065-f716-4419-bfee-2c1292663a47)
+![WhatsApp Image 2023-12-12 at 3 10 48 PM](https://github.com/arjun2020-py/Personal_Money_Management_App/assets/69357545/500b1213-f933-4614-89f5-476e3e738f86)
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
