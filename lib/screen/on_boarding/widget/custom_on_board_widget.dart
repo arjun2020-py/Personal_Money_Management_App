@@ -6,8 +6,7 @@ class CustomBuildPage extends StatelessWidget {
       required this.imageUrl,
       required this.title,
       required this.decrption,
-      required this.color
-      });
+      required this.color});
   final String imageUrl;
   final String title;
   final String decrption;
@@ -17,14 +16,20 @@ class CustomBuildPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          color:color ,
+          color: color,
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(imageUrl),
-                Text(title),
+                SizedBox(
+                  height: 50,
+                ),
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
                 Text(decrption)
               ],
             ),

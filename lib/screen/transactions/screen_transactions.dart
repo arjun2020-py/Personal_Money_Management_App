@@ -19,8 +19,6 @@ class ScreenTrnasation extends StatelessWidget {
           padding: EdgeInsets.all(10),
           itemCount: newList.length,
           separatorBuilder: (BuildContext context, int index) {
-
-            
             return SizedBox(
               height: 10,
             );
@@ -36,7 +34,21 @@ class ScreenTrnasation extends StatelessWidget {
                 children: [
                   SlidableAction(
                     onPressed: (context) {
-                      TransactionDB.instance.deleteTranscation(_values.id!);
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            content: Text('Do you want to delete ?'),
+                            actions: [
+                              IconButton(onPressed: () {}, icon: Text('Ok')),
+                              Center(
+                                  child: IconButton(
+                                      onPressed: () {}, icon: Text('Cancel')))
+                            ],
+                          );
+                        },
+                      );
+                      // TransactionDB.instance.deleteTranscation(_values.id!);
                     },
                     icon: Icons.delete,
                     backgroundColor: Colors.red,

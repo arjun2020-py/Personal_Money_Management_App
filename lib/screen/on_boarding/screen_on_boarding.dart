@@ -19,19 +19,22 @@ class ScreenOnboarding extends StatelessWidget {
           controller: controller.pageController,
           onPageChanged: (index) => controller.onLastPage(index),
           children: [
-           // CustomBuildPage(),
-            // Container(
-            //   color: Colors.red,
-            //   child: Center(child: Image.asset(CustomImages().transcation)),
-            // ),
-            Container(
-              color: Colors.indigo,
-              child: Center(child: Image.asset(CustomImages().income)),
+            CustomBuildPage(
+              imageUrl: CustomImages().transcation,
+              title: 'Transcation',
+              decrption: '',
+              color: Colors.red,
             ),
-            Container(
-              color: Colors.green,
-              child: Center(child: Image.asset(CustomImages().expense)),
-            ),
+            CustomBuildPage(
+                imageUrl: CustomImages().income,
+                title: 'Income',
+                decrption: '',
+                color: Colors.indigo),
+            CustomBuildPage(
+                imageUrl: CustomImages().expense,
+                title: 'Expense',
+                decrption: '',
+                color: Colors.green)
           ],
         ),
       ),
